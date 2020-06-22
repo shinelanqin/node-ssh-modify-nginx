@@ -1,0 +1,33 @@
+{
+  "name": "webapck-ssh-modify-nginx",
+  "version": "1.0.0",
+  "description": "A webpack ssh upload&reload nginx plugin",
+  "main": "index.js",
+  "bin": {
+    "wepack-ssh-modify-nginx": "./bin"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinelanqin/node-ssh-modify-nginx.git"
+  },
+  "keywords": [
+    "webpack",
+    "node-ssh",
+    "webapck ssh upload&reload nginx"
+  ],
+  "author": "qin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shinelanqin/node-ssh-modify-nginx/issues"
+  },
+  "homepage": "https://github.com/shinelanqin/node-ssh-modify-nginx#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "node-ssh": "^10.0.2",
+    "scp2": "^0.5.0",
+    "yargs": "^15.3.1"
+  }
+}
