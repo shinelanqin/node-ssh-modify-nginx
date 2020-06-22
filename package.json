@@ -1,6 +1,6 @@
 {
   "name": "webpack-modify-nginx-plugin-test",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A webpack ssh upload&reload nginx plugin",
   "main": "index.js",
   "bin": {
