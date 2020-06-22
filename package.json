@@ -1,5 +1,5 @@
 {
-  "name": "webapck-ssh-modify-nginx",
+  "name": "webpack-modify-nginx-plugin",
   "version": "1.0.0",
   "description": "A webpack ssh upload&reload nginx plugin",
   "main": "index.js",
