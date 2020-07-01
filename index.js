@@ -34,7 +34,7 @@ class sshNginx {
       // Local, Remote
       ssh.getFile(local, `${serverPath}/${serverFile}`).then((Contents) => {
         open(local);
-        console.log(colors.green('The File\'s contents were successfully downloaded'), 1111);
+        console.log(colors.green('The File\'s contents were successfully downloaded'));
         this.writeFileToLine(local, extendNgConf, extendNgLinenum, ergStr)
       }, function(error) {
         console.log(colors.red('Something\'s wrong'));
