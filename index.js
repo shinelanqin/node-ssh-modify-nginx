@@ -54,7 +54,7 @@ class sshNginx {
     let data = _fileCon.split(/\r\n|\n|\r/gm); //readFileSync的第一个参数是文件名
     data.splice(line, 0, value);
     fs.writeFileSync(filePath, data.join('\r\n'))
-    // this.handleNginx()
+    this.handleNginx()
   }
 
   handleNginx() {
