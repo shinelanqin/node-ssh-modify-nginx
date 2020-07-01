@@ -1,4 +1,5 @@
 # node-ssh-modify-nginx
+
 `
 const sshNginx = require('node-ssh-modify-nginx')
 
@@ -10,4 +11,5 @@ new sshNginx({
   local: path.resolve(__dirname, 'nginx.conf),
   serverPath: '/*/*/conf.d'
 }).init()
+
 `
