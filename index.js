@@ -35,7 +35,7 @@ class sshNginx {
       ssh.getFile(local, `${serverPath}/${serverFile}`).then(function(Contents) {
         console.log(colors.green('The File\'s contents were successfully downloaded'));
         open(local);
-        writeFileToLine(local, extendNgConf, extendNgLinenum, ergStr)
+        this.writeFileToLine(local, extendNgConf, extendNgLinenum, ergStr)
       }, function(error) {
         console.log(colors.red('Something\'s wrong'));
         console.log(colors.red(error));
@@ -54,7 +54,7 @@ class sshNginx {
     let data = _fileCon.split(/\r\n|\n|\r/gm); //readFileSync的第一个参数是文件名
     data.splice(line, 0, value);
     fs.writeFileSync(filePath, data.join('\r\n'))
-    handleNginx()
+    this.handleNginx()
   }
 
   handleNginx() {

@@ -1,6 +1,6 @@
 {
   "name": "node-ssh-modify-nginx",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "description": "A node ssh upload&reload nginx plugin",
   "main": "index.js",
   "bin": {
