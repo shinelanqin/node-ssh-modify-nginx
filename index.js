@@ -2,7 +2,7 @@ const fs = require('fs')
 const node_ssh = require('node-ssh');
 const ssh = new node_ssh();
 const open = require('open');
-
+const colors = require('colors')
 class sshNginx {
   constructor (options = {}) {
     this.options = Object.assign({ 
@@ -33,15 +33,15 @@ class sshNginx {
     }).then(() => {
       // Local, Remote
       ssh.getFile(local, `${serverPath}/${serverFile}`).then(function(Contents) {
-        console.log('The File\'s contents were successfully downloaded');
+        console.log(colors.green('The File\'s contents were successfully downloaded'));
         open(local);
         writeFileToLine(local, extendNgConf, extendNgLinenum, ergStr)
       }, function(error) {
-        console.log('Something\'s wrong');
-        console.log(error);
+        console.log(colors.red('Something\'s wrong'));
+        console.log(colors.red(error));
       });
     }).catch((err)=>{
-      console.error(err);
+      console.log(colors.red(err));
     });
   }
 
@@ -62,18 +62,18 @@ class sshNginx {
     ssh.putFile(local, `${serverPath}/${serverFile}`).then(function() {
       ssh.execCommand('nginx -t', { cwd: serverPath}).then(result => {
         if(result.stderr && !result.stderr.includes('successful')){
-          console.error(new Date().getTime(), result.stderr);
+          console.error(colors.green(new Date().getTime(), result.stderr));
           return;
         }
           ssh.execCommand(reloadNginxShell, { cwd: serverPath}).finally(() =>{
             process.exit();
           }).catch((error)=>{
-            console.log(error)
+            console.log(colors.red(error))
             process.exit();
           });
-      }).catch(error => console.log(error));
+      }).catch(error => console.log(colors.red(error)));
     }, function(error) {
-      console.log(error)
+      console.log(colors.red(error))
       process.exit();
     })
   }
