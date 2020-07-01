@@ -1,1 +1,1 @@
-# webpack-modify-nginx-plugin
+# node-ssh-nginx
