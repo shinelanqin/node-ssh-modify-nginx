@@ -66,6 +66,7 @@ class sshNginx {
           return;
         }
           ssh.execCommand(reloadNginxShell, { cwd: serverPath}).then(() =>{
+            console.log(colors.green('It\'s  were successfully'))
             process.exit();
           }).catch((error)=>{
             console.log(colors.red(error))

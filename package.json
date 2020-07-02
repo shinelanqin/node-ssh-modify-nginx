@@ -14,6 +14,7 @@
   "keywords": [
     "node",
     "node-ssh",
+    "node-ssh-modify-nginx",
     "node ssh upload&reload nginx"
   ],
   "author": "qin",
