@@ -65,7 +65,7 @@ class sshNginx {
           console.error(colors.green(new Date().getTime(), result.stderr));
           return;
         }
-          ssh.execCommand(reloadNginxShell, { cwd: serverPath}).finally(() =>{
+          ssh.execCommand(reloadNginxShell, { cwd: serverPath}).then(() =>{
             process.exit();
           }).catch((error)=>{
             console.log(colors.red(error))
