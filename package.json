@@ -25,7 +25,7 @@
   "homepage": "https://github.com/shinelanqin/node-ssh-modify-nginx#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "node-ssh": "^10.0.2",
+    "node-ssh": "^13.1.0",
     "open": "^7.0.4"
   },
   "devDependencies": {}
