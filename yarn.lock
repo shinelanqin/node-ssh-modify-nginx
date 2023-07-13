@@ -2,9 +2,19 @@
 # yarn lockfile v1
 
 
-asn1@~0.2.0:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.4.tgz#8d2475dfab553bb33e77b54e59e880bb8ce23136"
+"@types/node@^18.11.18":
+  version "18.16.19"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.19.tgz#cb03fca8910fdeb7595b755126a8a78144714eea"
+
+"@types/ssh2@^1.11.9":
+  version "1.11.13"
+  resolved "https://registry.yarnpkg.com/@types/ssh2/-/ssh2-1.11.13.tgz#e6224da936abec0541bf26aa826b1cc37ea70d69"
+  dependencies:
+    "@types/node" "^18.11.18"
+
+asn1@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.6.tgz#0d3a7bb6e64e02a90c0303b31f292868ea09a08d"
   dependencies:
     safer-buffer "~2.1.0"
 
@@ -14,13 +24,28 @@ bcrypt-pbkdf@^1.0.2:
   dependencies:
     tweetnacl "^0.14.3"
 
+buildcheck@~0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/buildcheck/-/buildcheck-0.0.6.tgz#89aa6e417cfd1e2196e3f8fe915eb709d2fe4238"
+
 colors@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
 
+cpu-features@~0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/cpu-features/-/cpu-features-0.0.8.tgz#a2d464b023b8ad09004c8cdca23b33f192f63546"
+  dependencies:
+    buildcheck "~0.0.6"
+    nan "^2.17.0"
+
 is-docker@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/is-docker/-/is-docker-2.0.0.tgz#2cb0df0e75e2d064fe1864c37cdeacb7b2dcf25b"
+
+is-stream@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-2.0.1.tgz#fac1e3d53b97ad5a9d0ae9cef2389f5810a5c077"
 
 is-wsl@^2.1.1:
   version "2.2.0"
@@ -34,15 +59,21 @@ make-dir@^3.1.0:
   dependencies:
     semver "^6.0.0"
 
-node-ssh@^10.0.2:
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/node-ssh/-/node-ssh-10.0.2.tgz#975b849c0446a8e5d233cd9b14fc776f8fba73e7"
+nan@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.17.0.tgz#c0150a2368a182f033e9aa5195ec76ea41a199cb"
+
+node-ssh@^13.1.0:
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/node-ssh/-/node-ssh-13.1.0.tgz#fca947200d61db9a5f9915e27c252e133b79e6bf"
   dependencies:
+    "@types/ssh2" "^1.11.9"
+    is-stream "^2.0.0"
     make-dir "^3.1.0"
-    sb-promise-queue "^2.0.0"
-    sb-scandir "^3.0.0"
+    sb-promise-queue "^2.1.0"
+    sb-scandir "^3.1.0"
     shell-escape "^0.2.0"
-    ssh2 "^0.8.9"
+    ssh2 "^1.11.0"
 
 open@^7.0.4:
   version "7.0.4"
@@ -55,15 +86,15 @@ safer-buffer@~2.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
-sb-promise-queue@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/sb-promise-queue/-/sb-promise-queue-2.0.0.tgz#e275a92a958f34b8bd9c8c6cbb760ac39598cb09"
+sb-promise-queue@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/sb-promise-queue/-/sb-promise-queue-2.1.0.tgz#7e44bebef643f75d809a3db7f605b815d877a04d"
 
-sb-scandir@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/sb-scandir/-/sb-scandir-3.0.0.tgz#b2f462094f661f12a089f55139b8edbf5ce5b088"
+sb-scandir@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/sb-scandir/-/sb-scandir-3.1.0.tgz#31c346abb5184b73c5a25b286858f4299aa8756c"
   dependencies:
-    sb-promise-queue "^2.0.0"
+    sb-promise-queue "^2.1.0"
 
 semver@^6.0.0:
   version "6.3.0"
@@ -73,23 +104,15 @@ shell-escape@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/shell-escape/-/shell-escape-0.2.0.tgz#68fd025eb0490b4f567a027f0bf22480b5f84133"
 
-ssh2-streams@~0.4.10:
-  version "0.4.10"
-  resolved "https://registry.yarnpkg.com/ssh2-streams/-/ssh2-streams-0.4.10.tgz#48ef7e8a0e39d8f2921c30521d56dacb31d23a34"
+ssh2@^1.11.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/ssh2/-/ssh2-1.14.0.tgz#8f68440e1b768b66942c9e4e4620b2725b3555bb"
   dependencies:
-    asn1 "~0.2.0"
+    asn1 "^0.2.6"
     bcrypt-pbkdf "^1.0.2"
-    streamsearch "~0.1.2"
-
-ssh2@^0.8.9:
-  version "0.8.9"
-  resolved "https://registry.yarnpkg.com/ssh2/-/ssh2-0.8.9.tgz#54da3a6c4ba3daf0d8477a538a481326091815f3"
-  dependencies:
-    ssh2-streams "~0.4.10"
-
-streamsearch@~0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/streamsearch/-/streamsearch-0.1.2.tgz#808b9d0e56fc273d809ba57338e929919a1a9f1a"
+  optionalDependencies:
+    cpu-features "~0.0.8"
+    nan "^2.17.0"
 
 tweetnacl@^0.14.3:
   version "0.14.5"
